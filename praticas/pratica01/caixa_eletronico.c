@@ -1,18 +1,20 @@
 #include <stdio.h>
 
 int main() {
-    int valor, notas;
-    int cedulas[] = {200, 100, 50, 20, 10, 5, 2};
+    float valor, saque, saldo;
+    printf("Digite o valor do saque: ");
+    scanf("%f", &saque);
 
-    printf("Digite o valor do saque (Máx R$ 1000): ");
-    scanf("%d", &valor);
+    printf("Digite o saldo disponível: ");
+    scanf("%f", &saldo);
 
-    if (valor > 1000 || valor < 0) {
-        printf("Valor inválido para saque.\n");
-
-        return 0;
+    if (saque > saldo) {
+        printf("Saldo insuficiente para realizar o saque.\n");
+    } else {
+        valor = saldo - saque;
+        printf("Saque realizado com sucesso. Saldo restante: %.2f\n", valor);
     }
 
-    return 0;
 }
+
 
